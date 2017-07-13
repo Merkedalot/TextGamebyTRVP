@@ -5,6 +5,8 @@
 
 #include "handletextfield.h"
 
+//test git comment
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
