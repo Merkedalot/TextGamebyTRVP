@@ -10,6 +10,7 @@ HandleTextField::HandleTextField(QObject *parent) :
 
 void HandleTextField::handleSubmitTextField(const QString &in)
 {
-    qDebug() << "c++: HandleTextField::handleSubmitTextField:" << in;
+    //output to console with qDebug()
+    //qDebug() << "c++: HandleTextField::handleSubmitTextField:" << in;
     emit setTextField(in.toUpper());
 }

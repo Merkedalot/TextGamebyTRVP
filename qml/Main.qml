@@ -9,12 +9,13 @@ App {
     property var gametextstring: ["Welcome, enter your name below"]
     property int action: 0
 
-    //signal submitTextField(string text)
+    signal submitTextField(string text)
 
     // this function is our QML slot
-    /*function setTextField(text){
-        console.log("setTextField: " + text)
-        inputBox.text = text }*/
+    function setTextField(text){
+        //console.log("setTextField: " + text)
+        mainText.text = "Welcome to the game " + text + "!"
+    }
 
     NavigationStack {
 
@@ -56,10 +57,12 @@ App {
                 onAccepted: {
                     newMsgs = newMsgs.concat({me: true, text: inputBox.text})
                     inputText = inputBox.text
-                    //submitTextField(inputBox.text)
+                    submitTextField(inputBox.text)
                     action++
+                    // emit the submitTextField signal
+                    //console.log(inputBox.text)
                     inputBox.text = ""
-                    mainText.text = "You entered: " + inputText//inputBox.text
+                    //mainText.text = "You entered: " + inputText//inputBox.text
                 }
             }
         }
